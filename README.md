@@ -1,1 +1,2 @@
-# 19-takim
+# Takım İsmi 
+PAKET uygulaması - 19.Takim
