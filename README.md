@@ -50,7 +50,7 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 - **Sprint board update**: Sprint board screenshotları:
 - **Ürün Durumu**: Ekran görüntüleri:
-https://user-images.githubusercontent.com/80983951/167260811-7c987cf8-feab-4d86-92ea-5b920f87bab1.mp4
+- https://user-images.githubusercontent.com/80983951/167260811-7c987cf8-feab-4d86-92ea-5b920f87bab1.mp4
 - ![1_page-0001](https://user-images.githubusercontent.com/80983951/167260873-46fd080c-2cc0-40f7-b103-08ef122121a1.jpg)
 - ![2_page-0001](https://user-images.githubusercontent.com/80983951/167260977-d13a07a3-667f-4586-b963-af1759b98321.jpg)
 
