@@ -50,6 +50,11 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 - **Sprint board update**: Sprint board screenshotları:
 - **Ürün Durumu**: Ekran görüntüleri:
+- 
+
+https://user-images.githubusercontent.com/80983951/167260811-7c987cf8-feab-4d86-92ea-5b920f87bab1.mp4
+
+
 - **Sprint Review**: Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için gerekli görülmüştür. Fakat bir yandan da veritabanı form sayfası için gerekli olmamıştır. O sebeple PBI bir sonraki sprint'e aktarılmıştır. Çıkan ürünün çalışmasında ve testlerinde bir problem görülmemiştir. Ekstra koyulması gereken özellikler belirlenmiştir. Sprint Review katılımcıları: ......
 
 - **Sprint Retrospective**:
