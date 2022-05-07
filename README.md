@@ -40,10 +40,12 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 - **Backlog düzeni ve Story seçimleri**: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır.Story'ler yapılacak işlere (task'lere) bölünmüştür. 
 
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats:![D SCRUM 1](https://user-images.githubusercontent.com/80983951/167260677-b7efeac1-04c5-4bbb-946c-da63a3e1e83f.jpeg)
-![D scrum 2](https://user-images.githubusercontent.com/80983951/167260680-17bf32fc-df0e-4fa6-a4d7-cab7d61cf12b.jpeg)
-![Uploading D. scrum3.jpeg…]()
-![Uploading Daily Scrum meet google 1.png…]()
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats:
+- ![D SCRUM 1](https://user-images.githubusercontent.com/80983951/167260714-ab8a639c-cfc4-4526-9a15-362b7abae5e8.jpeg)
+- ![D scrum 2](https://user-images.githubusercontent.com/80983951/167260718-03ad2f63-3416-492e-8c39-2984b309bfcd.jpeg)
+- ![D  scrum3](https://user-images.githubusercontent.com/80983951/167260721-eb335470-f1de-41fa-bbc5-158e2f6d6321.jpeg)
+- <img width="1067" alt="Daily Scrum meet google 1" src="https://user-images.githubusercontent.com/80983951/167260724-14a15414-e098-4fb3-91ae-ff88f2e9128f.png">
+
 
 
 - **Sprint board update**: Sprint board screenshotları:
