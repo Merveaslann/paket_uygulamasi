@@ -42,9 +42,9 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats:
 - ![D SCRUM 1](https://user-images.githubusercontent.com/80983951/167260714-ab8a639c-cfc4-4526-9a15-362b7abae5e8.jpeg)
-- ![D scrum 2](https://user-images.githubusercontent.com/80983951/167260718-03ad2f63-3416-492e-8c39-2984b309bfcd.jpeg)
-- ![D  scrum3](https://user-images.githubusercontent.com/80983951/167260721-eb335470-f1de-41fa-bbc5-158e2f6d6321.jpeg)
-- <img width="1067" alt="Daily Scrum meet google 1" src="https://user-images.githubusercontent.com/80983951/167260724-14a15414-e098-4fb3-91ae-ff88f2e9128f.png">
+  - ![D scrum 2](https://user-images.githubusercontent.com/80983951/167260718-03ad2f63-3416-492e-8c39-2984b309bfcd.jpeg)
+    - ![D  scrum3](https://user-images.githubusercontent.com/80983951/167260721-eb335470-f1de-41fa-bbc5-158e2f6d6321.jpeg)
+      - <img width="1067" alt="Daily Scrum meet google 1" src="https://user-images.githubusercontent.com/80983951/167260724-14a15414-e098-4fb3-91ae-ff88f2e9128f.png">
 
 
 
