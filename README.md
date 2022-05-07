@@ -30,4 +30,27 @@ Maddi anlamda desteğe ihtiyacı olan bireyler
 
 
 # Product Backlog URL
+https://miro.com/app/board/uXjVO3c5b0w=/
 # SPRİNT 1
+- **Sprint Notları**: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+
+- **Sprint içinde tamamlanması tahmin edilen puan**: 100 Puan
+
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 4 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+
+- **Backlog düzeni ve Story seçimleri**: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır.Story'ler yapılacak işlere (task'lere) bölünmüştür. 
+
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats:![D SCRUM 1](https://user-images.githubusercontent.com/80983951/167260677-b7efeac1-04c5-4bbb-946c-da63a3e1e83f.jpeg)
+![D scrum 2](https://user-images.githubusercontent.com/80983951/167260680-17bf32fc-df0e-4fa6-a4d7-cab7d61cf12b.jpeg)
+![Uploading D. scrum3.jpeg…]()
+![Uploading Daily Scrum meet google 1.png…]()
+
+
+- **Sprint board update**: Sprint board screenshotları:
+- **Ürün Durumu**: Ekran görüntüleri:
+- **Sprint Review**: Alınan kararlar: Veritabanı oluşturması email ile toplanacak veriler için gerekli görülmüştür. Fakat bir yandan da veritabanı form sayfası için gerekli olmamıştır. O sebeple PBI bir sonraki sprint'e aktarılmıştır. Çıkan ürünün çalışmasında ve testlerinde bir problem görülmemiştir. Ekstra koyulması gereken özellikler belirlenmiştir. Sprint Review katılımcıları: ......
+
+- **Sprint Retrospective**:
+    - Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır
+    - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı
+    - Unit test'ler için ayrılan efor/saat arttırılmalı
