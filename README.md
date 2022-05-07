@@ -64,3 +64,5 @@ https://user-images.githubusercontent.com/80983951/167260811-7c987cf8-feab-4d86-
     - Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır
     - Tahmin puanları gözden geçirilmeli ve sprint planlama toplantılarında gerekli geri bildirimlerin developer'lar tarafından verildiğine emin olunmalı
     - Unit test'ler için ayrılan efor/saat arttırılmalı
+# SPRINT 2
+# SPRINT 3
