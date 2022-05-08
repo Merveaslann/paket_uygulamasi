@@ -48,7 +48,11 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 
 
-- **Sprint Review**: Alınan kararlar: 
+- **Sprint Review**:
+    - **Alınan Karar**: İlk sprint için hedeflerimizi tasarım odaklı ve teknik olarak 2'ye ayırdık. Grubun yeni tanışması ve araya giren tatil sebebiyle özgüven problemi yaşamamak için yapılabilir hedefler belirledik. Dolayısıyla ürünün  olası son haliyle ilgili bir tasarım elde ettik ve uygulamanın kayıt ve giriş sayfalarını teknik tamamlamış olduk.
 - **Sprint Retrospective**:
+    - Daha sık toplantı yapılması gerektiğine ve daha fazla sorumluluk alınabileceğiyle ilgili hemfikir olundu.
+    - Grup, yeni tanışmasına rağmen 1.sprint açısından çabuk uyum sağlandı ve hedeflenen yere gelindi.
+    - UI geliştirmeleri için zaman kazandıracak ve etkili yöntemler aranmalı.
 # SPRINT 2
 # SPRINT 3
