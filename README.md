@@ -57,4 +57,6 @@ https://miro.com/app/board/uXjVO3c5b0w=/
     - Grup, yeni tanışmasına rağmen 1.sprint açısından çabuk uyum sağlandı ve hedeflenen yere gelindi.
     - UI geliştirmeleri için zaman kazandıracak ve etkili yöntemler aranmalı.
 # SPRINT 2
+- **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
 # SPRINT 3
+- **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
