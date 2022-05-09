@@ -9,7 +9,7 @@
 # Ürün ismi
 --PAKET Uygulaması--
 # Ürün Açıklaması
-Ulaşım masraflarında ve kargo ücretlerinin artışına alternatif çözüm getirebilmek adına halihazırda belirli bir şehirden başka şehre giden araçlar şahsi olarak kargo paketi alabilecek. Böylece daha hızlı bir süreç işlenmesini ve aynı zamanda kişinin yapacağı ulaşım masrafları da azalmış olacak.
+Ulaşım masraflarında ve kargo ücretlerinin artışına alternatif çözüm getirebilmek adına halihazırda belirli bir şehirden başka şehre giden araçlar şahsi olarak kargo paketi alabilecek. Böylece süreç daha hızlı bir şekilde gerçekleşirken diğer taraftan da kişinin(sürücünün) yapacağı ulaşım masrafları da bu taşımacılık sayesinden  azalmış olacak.
 # Ürün Özellikleri
 - Daha hızlı ulaşım sağlama ve zaman kazandırma.
 - Daha uygun fiyata kargolama ücretleri
