@@ -38,7 +38,11 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 
 
-- **Sprint board update**: Sprint board screenshotları:
+- **Sprint board update**: Sprint board screenshotları;
+ <img width="671" alt="SPRINT 1" src="https://user-images.githubusercontent.com/80983951/167471147-4f00fe7f-2a8f-4628-a2fe-65722e6aa635.png">
+<img width="672" alt="SPRINT 2" src="https://user-images.githubusercontent.com/80983951/167471160-b26e4088-06e5-42c0-9ec8-e926e37b92da.png">
+<img width="669" alt="SPRINT 3" src="https://user-images.githubusercontent.com/80983951/167471170-df365e3a-24a8-4771-a883-c70322158308.png">
+
 - **Ürün Durumu**: Ekran görüntüleri:
 - https://user-images.githubusercontent.com/80983951/167260811-7c987cf8-feab-4d86-92ea-5b920f87bab1.mp4
 - ![1_page-0001](https://user-images.githubusercontent.com/80983951/167260873-46fd080c-2cc0-40f7-b103-08ef122121a1.jpg)
