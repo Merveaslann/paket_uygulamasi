@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'travels_listings_page.dart';
-import 'order_listings_page.dart';
 import 'login_page.dart';
+import 'order_listings_page.dart';
+import 'travels_listings_page.dart';
 import 'profile_page.dart';
+import 'order_add_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.inventory),
               label: "Paketler"
           ),
           BottomNavigationBarItem(
@@ -78,9 +79,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
       ),
-      body: Center(
-        child: _pageList.elementAt(selectedIndex)
-      ),
+      body: _pageList.elementAt(selectedIndex),
     );
   }
 
