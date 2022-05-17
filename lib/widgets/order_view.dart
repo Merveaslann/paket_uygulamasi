@@ -36,7 +36,7 @@ class _OrderViewState extends State<OrderView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(widget.order.owner),
-              Text(DateFormat("dd/MM/yyyy").format(widget.order.date)),
+              Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.order.date)))),
               Text(widget.order.size),
             ],
           )
