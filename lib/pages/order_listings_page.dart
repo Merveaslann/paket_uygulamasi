@@ -15,26 +15,29 @@ class OrderListings extends StatefulWidget {
 }
 
 class _OrderListingsState extends State<OrderListings> {
-  final Order temp = Order("Halı", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
-  final Order koli = Order("Koli", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
+  final Order temp = Order("Halı", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
+  final Order koli = Order("Koli", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
 
   @override
   Widget build(BuildContext context) {
+    var orderItems = [
+          OrderView(temp),
+          OrderView(koli),
+          OrderView(temp),
+          OrderView(koli),
+          OrderView(temp),
+          OrderView(koli),
+          OrderView(temp),
+          OrderView(koli),
+          OrderView(temp),
+          OrderView(koli),
+        ];
+
     return Stack(
       children: [
-        ListView(
-          children: [
-            OrderView(temp),
-            OrderView(koli),
-            OrderView(temp),
-            OrderView(koli),
-            OrderView(temp),
-            OrderView(koli),
-            OrderView(temp),
-            OrderView(koli),
-            OrderView(temp),
-            OrderView(koli),
-          ],
+        ListView.builder(
+          itemCount: orderItems.length,
+          itemBuilder: (context, index) => orderItems[index],
         ),
         Positioned(
           bottom: 20,
