@@ -67,6 +67,8 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 - <img width="599" alt="2 sprint 2" src="https://user-images.githubusercontent.com/80983951/169656614-61ea612d-0635-42b7-942b-0959f6cf850b.png">
 - <img width="568" alt="2 sprint 3" src="https://user-images.githubusercontent.com/80983951/169656622-dbb27688-5d61-4ee9-bfc9-b880446e900c.png">
 - **Sprint board update**: Sprint board screenshotları;
+- <img width="619" alt="sdasda" src="https://user-images.githubusercontent.com/80983951/169665049-d15170a1-59c7-4a7a-a7c3-f164031fa89c.png">
+
 - **Ürün Durumu**: Ekran görüntüleri:
 - ![WhatsApp Image 2022-05-20 at 00 47 55](https://user-images.githubusercontent.com/80983951/169656663-0d2a9e4a-234e-4868-ad7e-7b1957fa2788.jpeg)
 - ![WhatsApp Image 2022-05-20 at 00 47 54](https://user-images.githubusercontent.com/80983951/169656670-948c08e9-2923-4ee7-86c1-4e1ffca1fd06.jpeg)
