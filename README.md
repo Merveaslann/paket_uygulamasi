@@ -26,7 +26,7 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 # SPRINT 1
 - **Sprint içinde tamamlanması tahmin edilen puan**: 30 Puan
 
-- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 100 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 30 ile başlaması gerektiğine karar verildi.
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 100 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 30 ile başlaması gerektiğine karar verildi. 
 
 - **Backlog düzeni ve Story seçimleri**: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır.Story'ler yapılacak işlere (task'lere) bölünmüştür. 
 
@@ -57,6 +57,25 @@ https://miro.com/app/board/uXjVO3c5b0w=/
     - Grup, yeni tanışmasına rağmen 1.sprint açısından çabuk uyum sağlandı ve hedeflenen yere gelindi.
     - UI geliştirmeleri için zaman kazandıracak ve etkili yöntemler aranmalı.
 # SPRINT 2
-- **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
+- **Sprint içinde tamamlanması tahmin edilen puan**: 30 Puan
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 100 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 30 ile başlaması gerektiğine karar verildi.Bu sprint puanı da 30 üzerinden değerlendirilecektir.
+
+- **Backlog düzeni ve Story seçimleri**: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır.Story'ler yapılacak işlere (task'lere) bölünmüştür. 
+
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 2 Daily Scrum Chats:
+- <img width="550" alt="2 sprint 1" src="https://user-images.githubusercontent.com/80983951/169656586-b401965d-3b05-4e45-b53e-8931c8ebaaee.png">
+- <img width="599" alt="2 sprint 2" src="https://user-images.githubusercontent.com/80983951/169656614-61ea612d-0635-42b7-942b-0959f6cf850b.png">
+- <img width="568" alt="2 sprint 3" src="https://user-images.githubusercontent.com/80983951/169656622-dbb27688-5d61-4ee9-bfc9-b880446e900c.png">
+- **Sprint board update**: Sprint board screenshotları;
+- **Ürün Durumu**: Ekran görüntüleri:
+- ![WhatsApp Image 2022-05-20 at 00 47 55](https://user-images.githubusercontent.com/80983951/169656663-0d2a9e4a-234e-4868-ad7e-7b1957fa2788.jpeg)
+- ![WhatsApp Image 2022-05-20 at 00 47 54](https://user-images.githubusercontent.com/80983951/169656670-948c08e9-2923-4ee7-86c1-4e1ffca1fd06.jpeg)
+
+- **Sprint Review**:
+    - **Alınan Karar**:
+- **Sprint Retrospective**:
+    - Daha sık toplantı yapılması gerektiğine ve daha fazla sorumluluk alınabileceğiyle ilgili hemfikir olundu.
+    - UI geliştirmeleri için zaman kazandıracak ve etkili yöntemler aranmalı.
+
 # SPRINT 3
 - **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
