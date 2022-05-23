@@ -20,24 +20,75 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       body: Center(
         child: Form(
           key: _formKey,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'E-posta:'),
-              onSaved: (newValue) => email = newValue!,
-              validator: (value) => value == null || value.isEmpty ? 'Mail adresiniz boş olamaz' : null,
+            const Icon(Icons.card_giftcard_outlined,size: 100),
+            const SizedBox(height: 25),
+            const Text(
+              "PAKET",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 30.0,
+              ),
             ),
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Şifre:'),
-              onSaved: (value) => password = value!,
-              validator: (value) => value == null || value.isEmpty ? 'Şifreniz boş olamaz' : null,
-              obscureText: true,
-              enableSuggestions: false,
-              autocorrect: false,
+            const SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  border: Border.all(color: Colors.black54),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: TextFormField(
+                    decoration: const InputDecoration(border: InputBorder.none,
+                      hintText: 'Email',
+                    ),
+                    onSaved: (newValue) => email = newValue!,
+                    validator: (value) => value == null || value.isEmpty ? 'Mail adresiniz boş olamaz' : null,
+                  ),
+                ),
+              ),
             ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    border: Border.all(color: Colors.black54),
+                    borderRadius: BorderRadius.circular(30)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: const InputDecoration(border: InputBorder.none,
+                      hintText: 'Şifre',
+                    ),
+                    onSaved: (value) => password = value!,
+                    validator: (value) => value == null || value.isEmpty ? 'Şifreniz boş olamaz' : null,
+                    enableSuggestions: false,
+                    autocorrect: false,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                primary: Colors.deepPurple,
+                onPrimary: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+              ),
+              child: const Text("Giriş Yap"),
               onPressed: () async {
                 // Form valid (geçerli/yazdığımız kurallara uyuyor ise) kontrolü yapıyoruz.
                 if (_formKey.currentState!.validate()) {
@@ -45,18 +96,32 @@ class _LoginPageState extends State<LoginPage> {
                   await signIn(context);
                 }
               },
-              child: const Text('Giriş Yap'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => const SignupPage(),
+                    builder: (context) => const SignupPage(),
                   )
                 );
               },
-              child: const Text("Üye ol")
-            )
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Üye değil misiniz? ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "Hemen üye olun",
+                    style: TextStyle(color: Colors.blue),
+                  )
+                ],
+              ),
+            ),
           ]),
         ),
       ),
@@ -64,19 +129,20 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> signIn(BuildContext context) async {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password)
-      .then((UserCredential usercredential) {
-        if (usercredential.user != null) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute<void>(
-              builder: (context) => const HomePage(),
-            ),
-          );
-        }
-      }).onError((error, stackTrace) {
+    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password)
+        .then((UserCredential usercredential) {
+      if (usercredential.user != null) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute<void>(
+            builder: (context) => const HomePage(),
+          ),
+        );
+      }
+    }).onError((error, stackTrace) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Kullanıcı adınız veya şifreniz yanlış.')),
         );
-      },);
+      },
+    );
   }
 }
