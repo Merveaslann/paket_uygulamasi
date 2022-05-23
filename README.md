@@ -74,10 +74,9 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 - ![WhatsApp Image 2022-05-20 at 00 47 54](https://user-images.githubusercontent.com/80983951/169656670-948c08e9-2923-4ee7-86c1-4e1ffca1fd06.jpeg)
 
 - **Sprint Review**:
-    - **Alınan Karar**:
+    - **Alınan Karar**: 2.sprint için planlanan 3 görevin 2'si tamamlandı ve diğeri de yapılma süreci halinde şu an. Grupça değerlendirmelerden sonra son teslim tarihini, kişilerin üniversite sınav temposu ve uygulama değerlendirme kriterlerini de göz önüne alarak uygulamayaı MVP haliyle çalışır bir ürün ortaya çıkarmayı planladık. Bu sebeble de temel parçalara daha çok yoğunlaşmayı ve eğer zaman kalırsa da daha detay ve tasarım kısımları el atmayı düşündük. Bootcamp süreci ardından fikrimiz eğer daha ciddi bir konuma gelirse (start-up gibi) bu kısımları daha geniş bir zamanda detaylı bir şekilde oluşturma niyetindeyiz.
 - **Sprint Retrospective**:
-    - Daha sık toplantı yapılması gerektiğine ve daha fazla sorumluluk alınabileceğiyle ilgili hemfikir olundu.
-    - UI geliştirmeleri için zaman kazandıracak ve etkili yöntemler aranmalı.
-
+    - Product backlog ve tasklarda zaman kazanmak adına değişikliğe gittik. 
+    - Görev paylaşımlarını daha detaylı planlama kararı aldık.
 # SPRINT 3
 - **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
