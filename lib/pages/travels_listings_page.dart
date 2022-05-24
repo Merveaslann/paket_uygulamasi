@@ -2,6 +2,7 @@ import 'package:bootcamp_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../models/travel.dart';
+import '../widgets/travel_view.dart';
 import 'travel_add_page.dart';
 
 class TravelListings extends StatefulWidget {
@@ -12,14 +13,21 @@ class TravelListings extends StatefulWidget {
 }
 
 class _TravelListingsState extends State<TravelListings> {
-  List travelItems = [];
-
+  final Travel temp = Travel("İstanbuldan İzmire gidiyorum", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İstanbul", "İzmir", 3, "3 orta boy paketlik yerim var.");
+  
   @override
   Widget build(BuildContext context) {
+    final List travelItems = [
+      TravelView(temp),
+      TravelView(temp),
+      TravelView(temp),
+      TravelView(temp),
+      TravelView(temp),
+    ];
+
     return Stack(
       fit: StackFit.expand,
       children: [
-        const Text("Burada acik seyahatler listelenecek"),
         ListView.builder(
           itemCount: travelItems.length,
           itemBuilder: (context, index) => travelItems[index],

@@ -1,17 +1,16 @@
-import 'package:flutter/material.dart';
+import '/models/travel.dart';
 import 'package:intl/intl.dart'; // DateTime icin
+import 'package:flutter/material.dart';
 
-import '../models/order.dart';
-
-class OrderView extends StatefulWidget {
-  final Order order;
-  const OrderView(this.order, {Key? key}) : super(key: key);
+class TravelView extends StatefulWidget {
+  final Travel travel;
+  const TravelView(this.travel, {Key? key}) : super(key: key);
 
   @override
-  State<OrderView> createState() => _OrderViewState();
+  State<TravelView> createState() => _TravelViewState();
 }
 
-class _OrderViewState extends State<OrderView> {
+class _TravelViewState extends State<TravelView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,22 +27,23 @@ class _OrderViewState extends State<OrderView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.order.title, style: const TextStyle(fontSize: 20)),
-                Row(
-                  children: [
-                    const Icon(Icons.location_on_rounded, size: 20,),
-                    Text("${widget.order.from} - ${widget.order.to}"),
-                  ],
-                ),
+                Text(widget.travel.title, style: const TextStyle(fontSize: 20)),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Icon(Icons.location_on_rounded, size: 20,),
+                Text("${widget.travel.from} - ${widget.travel.to}"),
               ],
             ),
             const Padding(padding: EdgeInsets.only(bottom: 8)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.order.owner),
-                Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.order.date)))),
-                Text(widget.order.size),
+                Text(widget.travel.owner),
+                Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.travel.date)))),
+                Text("Kapasite: ${widget.travel.capacity}"),
               ],
             )
           ],
