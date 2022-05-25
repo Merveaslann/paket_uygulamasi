@@ -5,6 +5,7 @@ import 'firebase_options.dart';
 
 import 'pages/login_page.dart';
 import 'pages/home_page.dart';
+import 'services/database.dart';
 
 void main() async {
   // Firebase auth initialize
@@ -24,7 +25,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'OUA Bootcamp Uygulaması',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const LoginPage(), // Eğer kullanıcı login ise anasayfaya değilse login sayfasına yönlendiriyor.
     );

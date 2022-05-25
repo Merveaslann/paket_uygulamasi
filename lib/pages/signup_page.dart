@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../widgets/styles.dart';
 import 'home_page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -76,12 +77,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              primary: Colors.deepPurple,
-              onPrimary: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-            ),
+            style: ElevatedButtonStyle(),
             child: const Text("Kayıt Ol"),
             onPressed: () async {
               // Form valid (geçerli/yazdığımız kurallara uyuyor ise) kontrolü yapıyoruz.

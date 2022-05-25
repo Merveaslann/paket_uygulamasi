@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../models/order.dart';
+import '../widgets/styles.dart';
 
 class OrderAddPage extends StatefulWidget {
   const OrderAddPage({Key? key}) : super(key: key);
@@ -106,7 +107,9 @@ class _OrderAddPageState extends State<OrderAddPage> {
                   keyboardType: TextInputType.multiline,
                   maxLines: null,
                 ),
+                const SizedBox(height: 15),
                 ElevatedButton(
+                    style: ElevatedButtonStyle(),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState?.save();
@@ -123,7 +126,7 @@ class _OrderAddPageState extends State<OrderAddPage> {
                       ).toMap());
                     }
                   },
-                  child: const Text("Yayınla")
+                  child: const Text("Paket Oluştur"),
                 )
               ],
             ),
