@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../widgets/styles.dart';
 import 'signup_page.dart';
 import 'home_page.dart';
 
@@ -47,7 +48,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: TextFormField(
-                    decoration: const InputDecoration(border: InputBorder.none,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
                       hintText: 'Email',
                     ),
                     onSaved: (newValue) => email = newValue!,
@@ -61,9 +63,9 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    border: Border.all(color: Colors.black54),
-                    borderRadius: BorderRadius.circular(30)
+                  color: Colors.grey.shade200,
+                  border: Border.all(color: Colors.black54),
+                  borderRadius: BorderRadius.circular(30)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
@@ -82,12 +84,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 15),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                primary: Colors.deepPurple,
-                onPrimary: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 40),
-              ),
+              style: ElevatedButtonStyle(),
               child: const Text("Giriş Yap"),
               onPressed: () async {
                 // Form valid (geçerli/yazdığımız kurallara uyuyor ise) kontrolü yapıyoruz.
@@ -130,19 +127,19 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> signIn(BuildContext context) async {
     final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password)
-        .then((UserCredential usercredential) {
-      if (usercredential.user != null) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute<void>(
-            builder: (context) => const HomePage(),
-          ),
-        );
-      }
-    }).onError((error, stackTrace) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Kullanıcı adınız veya şifreniz yanlış.')),
-        );
-      },
-    );
+      .then((UserCredential usercredential) {
+        if (usercredential.user != null) {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute<void>(
+              builder: (context) => const HomePage(),
+            ),
+          );
+        }
+      }).onError((error, stackTrace) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Kullanıcı adınız veya şifreniz yanlış.')),
+          );
+        },
+      );
   }
 }

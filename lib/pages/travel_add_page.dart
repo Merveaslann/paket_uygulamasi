@@ -1,7 +1,12 @@
+import 'package:bootcamp_app/pages/home_page.dart';
+import 'package:bootcamp_app/pages/travels_listings_page.dart';
 import "package:flutter/material.dart";
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cool_alert/cool_alert.dart';
 
+import '../models/travel.dart';
+import '../widgets/styles.dart';
 
 class TravelAddPage extends StatefulWidget {
   const TravelAddPage({Key? key}) : super(key: key);
@@ -15,8 +20,7 @@ class _TravelAddPageState extends State<TravelAddPage> {
   late String owner;
   late String from;
   late String to;
-  late String size;
-  late double weight;
+  late int weight;
   late String description;
   final _formKey = GlobalKey<FormState>();
   List<String> cities = ['Adana', 'Adıyaman', 'Afyonkarahisar', 'Aksaray', 'Amasya', 'Ankara', 'Antalya', 'Ardahan', 'Artvin', 'Aydın', 'Ağrı', 'Balıkesir', 'Bartın', 'Batman', 'Bayburt', 'Bilecik', 'Bingöl', 'Bitlis', 'Bolu', 'Burdur', 'Bursa', 'Denizli', 'Diyarbakır', 'Düzce', 'Edirne', 'Elâzığ', 'Erzincan', 'Erzurum', 'Eskişehir', 'Gaziantep', 'Giresun', 'Gümüşhane', 'Hakkâri', 'Hatay', 'Isparta', 'Iğdır', 'Kahramanmaraş', 'Karabük', 'Karaman', 'Kars', 'Kastamonu', 'Kayseri', 'Kilis', 'Kocaeli', 'Konya', 'Kütahya', 'Kırklareli', 'Kırıkkale', 'Kırşehir', 'Malatya', 'Manisa', 'Mardin', 'Mersin', 'Muğla', 'Muş', 'Nevşehir', 'Niğde', 'Ordu', 'Osmaniye', 'Rize', 'Sakarya', 'Samsun', 'Siirt', 'Sinop', 'Sivas', 'Tekirdağ', 'Tokat', 'Trabzon', 'Tunceli', 'Uşak', 'Van', 'Yalova', 'Yozgat', 'Zonguldak', 'Çanakkale', 'Çankırı', 'Çorum', 'İstanbul', 'İzmir', 'Şanlıurfa', 'Şırnak'];
@@ -90,17 +94,12 @@ class _TravelAddPageState extends State<TravelAddPage> {
                   },
                 ),
                 TextFormField(
-                    decoration: const InputDecoration(labelText: 'Kaç paket götürebilirsin?'),
-                    onSaved: (newValue) => size = newValue!,
-                    validator: (value) {
-                      if(value == null || value.isEmpty){
-                        return 'Bu alan boş bırakılamaz';
-                      }
-                      if(value is! int){
-                        return 'Lütfen bir sayı giriniz';
-                      }
-                      return null;
-                    }
+                  decoration: const InputDecoration(
+                    labelText: 'Taşınabilecek Ağırlık',
+                    suffixText: 'Kg',
+                  ),
+                  onSaved: (newValue) => weight = int.parse(newValue!),
+                  validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
                 ),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Açıklama'),
@@ -108,15 +107,41 @@ class _TravelAddPageState extends State<TravelAddPage> {
                   keyboardType: TextInputType.multiline,
                   maxLines: null,
                 ),
+                const SizedBox(height: 15),
                 ElevatedButton(
+                    style: ElevatedButtonStyle(),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState?.save();
-
-                        // FirebaseFirestore.instance.collection('travels').add({});
+                        FirebaseFirestore.instance.collection('travels').add(Travel(
+                            title,
+                            FirebaseAuth.instance.currentUser!.uid,
+                            FieldValue.serverTimestamp(),
+                            from,
+                            to,
+                            weight,
+                            description
+                        ).toMap())
+                        .then((result) {
+                          CoolAlert.show(
+                            context: context,
+                            // text: "Başarıyla seyahat oluşturdunuz!",
+                            type: CoolAlertType.success,
+                            autoCloseDuration: const Duration(seconds: 2),
+                            backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                            title: "Başarıyla seyahat oluşturdunuz!",
+                          ).then((value) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              )
+                            );
+                          });
+                        });
                       }
                     },
-                    child: const Text("Yayınla")
+                    child: const Text("Seyahat Oluştur"),
                 )
               ],
             ),

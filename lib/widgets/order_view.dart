@@ -14,33 +14,40 @@ class OrderView extends StatefulWidget {
 class _OrderViewState extends State<OrderView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      padding: const EdgeInsets.all(15),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(widget.order.title, style: const TextStyle(fontSize: 20)),
-              Row(
-                children: [
-                  const Icon(Icons.location_on_rounded, size: 20,),
-                  Text("${widget.order.from} - ${widget.order.to}"),
-                ],
-              ),
-            ],
-          ),
-          const Padding(padding: EdgeInsets.only(bottom: 4)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(widget.order.owner),
-              Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.order.date)))),
-              Text(widget.order.size),
-            ],
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey.shade200,
+          border: Border.all(color: Colors.grey.shade100),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        padding: const EdgeInsets.fromLTRB(15, 25, 15, 25),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.order.title, style: const TextStyle(fontSize: 20)),
+                Row(
+                  children: [
+                    const Icon(Icons.location_on_rounded, size: 20,),
+                    Text("${widget.order.from} - ${widget.order.to}"),
+                  ],
+                ),
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(bottom: 8)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.order.owner),
+                Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.order.date)))),
+                Text(widget.order.size),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

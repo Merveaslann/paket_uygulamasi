@@ -21,17 +21,17 @@ class _OrderListingsState extends State<OrderListings> {
   @override
   Widget build(BuildContext context) {
     var orderItems = [
-          OrderView(temp),
-          OrderView(koli),
-          OrderView(temp),
-          OrderView(koli),
-          OrderView(temp),
-          OrderView(koli),
-          OrderView(temp),
-          OrderView(koli),
-          OrderView(temp),
-          OrderView(koli),
-        ];
+      OrderView(temp),
+      OrderView(koli),
+      OrderView(temp),
+      OrderView(koli),
+      OrderView(temp),
+      OrderView(koli),
+      OrderView(temp),
+      OrderView(koli),
+      OrderView(temp),
+      OrderView(koli),
+    ];
 
     return Stack(
       children: [
