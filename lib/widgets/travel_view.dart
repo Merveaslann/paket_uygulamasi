@@ -1,9 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart'; // DateTime icin
 
-import '/pages/travel_detail_page.dart';
-import '/models/travel.dart';
+import '../pages/travel_detail_page.dart';
+import '../models/travel.dart';
 
 class TravelView extends StatefulWidget {
   final Travel travel;
@@ -54,7 +54,6 @@ class _TravelViewState extends State<TravelView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(widget.travel.owner),
-                  // Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.travel.date)))),
                 ],
               ),
               Row(
