@@ -1,11 +1,9 @@
-import 'package:bootcamp_app/pages/home_page.dart';
-import 'package:bootcamp_app/services/database.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/travel.dart';
 import '../widgets/travel_view.dart';
+import '../services/database.dart';
 import 'travel_add_page.dart';
 
 class TravelListings extends StatefulWidget {
@@ -16,41 +14,27 @@ class TravelListings extends StatefulWidget {
 }
 
 class _TravelListingsState extends State<TravelListings> {
-  // final Travel temp = Travel("İstanbuldan İzmire gidiyorum", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İstanbul", "İzmir", 3, "3 orta boy paketlik yerim var.");
-  
   @override
   Widget build(BuildContext context) {
-    // final List travelItems = [
-    //   TravelView(temp),
-    //   TravelView(temp),
-    //   TravelView(temp),
-    //   TravelView(temp),
-    //   TravelView(temp),
-    // ];
-
     return Stack(
       fit: StackFit.expand,
       children: [
         StreamBuilder<QuerySnapshot>(
-          stream: readData(),
+          stream: readTravels(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
               return const Text('Something went wrong');
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Text("Loading");
+              return const Center(child: CircularProgressIndicator());
             }
 
             return ListView(
               children: snapshot.data!.docs.map((document) {
                 Travel travel = Travel.fromMap(document.data() as Map<String, dynamic>);
-                Map<String, dynamic> data = document.data() as Map<String, dynamic>;
 
                 return TravelView(travel);
-                return ListTile(
-                  title: Text(travel.title),
-                );
               }).toList(),
             );
           },

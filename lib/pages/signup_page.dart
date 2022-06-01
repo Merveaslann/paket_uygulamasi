@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../widgets/styles.dart';
 import 'home_page.dart';
+import '../widgets/styles.dart';
+import '../models/user.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -96,6 +98,10 @@ class _SignupPageState extends State<SignupPage> {
     final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password)
       .then((UserCredential usercredential) {
         if (FirebaseAuth.instance.currentUser != null) {
+          FirebaseFirestore.instance.collection("users").add(
+              UserO(FirebaseAuth.instance.currentUser!.uid, "", "", "", FirebaseAuth.instance.currentUser!.email.toString(), FieldValue.serverTimestamp()).toMap()
+          );
+
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute<void>(builder: (context) => const HomePage()), (route) => false
           );

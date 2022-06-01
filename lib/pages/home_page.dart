@@ -27,33 +27,34 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Paket"),
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(Icons.person, size: 40),
-                        Text("${FirebaseAuth.instance.currentUser?.email}"),
-                      ],
+        child: Container(
+          color: Colors.deepPurple,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              const SizedBox(height: 30),
+              UserAccountsDrawerHeader(
+                  accountName: const Text("Hoşgeldiniz",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
                     ),
-                    Row(
-                      children: [
-                        Text("Hoşgeldin ${FirebaseAuth.instance.currentUser?.email}"),
-                      ],
-                    )
-                  ],
-                )
-            ),
-            ListTile(
-              title: const Text("Çıkış Yap"),
-              onTap: (){
-                signOut(context);
-              },
-            )
-          ],
+                  ),
+                  accountEmail: Text("${FirebaseAuth.instance.currentUser?.email}")),
+              ListTile(
+                title: const Text("Çıkış Yap",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: (){
+                  signOut(context);
+                },
+              ),
+            ],
+
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

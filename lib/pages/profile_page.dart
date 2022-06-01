@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../services/database.dart';
+import '../widgets/travel_view.dart';
+import '../models/travel.dart';
+
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -8,10 +15,16 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final List<Travel> _travels = readOwnTravels();
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text("Burasi profil sayfasi"),
+    // SEYAHATLERİMİ LİSTELEYEN BUILDER
+    return ListView.builder(
+      itemCount: _travels.length,
+      itemBuilder: (context, index){
+        return TravelView(_travels[index]);
+      }
     );
   }
 }

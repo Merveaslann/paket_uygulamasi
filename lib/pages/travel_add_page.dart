@@ -109,39 +109,51 @@ class _TravelAddPageState extends State<TravelAddPage> {
                 ),
                 const SizedBox(height: 15),
                 ElevatedButton(
-                    style: ElevatedButtonStyle(),
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        _formKey.currentState?.save();
-                        FirebaseFirestore.instance.collection('travels').add(Travel(
-                            title,
-                            FirebaseAuth.instance.currentUser!.uid,
-                            FieldValue.serverTimestamp(),
-                            from,
-                            to,
-                            weight,
-                            description
-                        ).toMap())
-                        .then((result) {
-                          CoolAlert.show(
-                            context: context,
-                            // text: "Başarıyla seyahat oluşturdunuz!",
-                            type: CoolAlertType.success,
-                            autoCloseDuration: const Duration(seconds: 2),
-                            backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-                            title: "Başarıyla seyahat oluşturdunuz!",
-                          ).then((value) {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HomePage(),
-                              )
-                            );
+                  style: ElevatedButtonStyle(),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState?.save();
+
+                      Travel _travel = Travel(
+                          title,
+                          FirebaseAuth.instance.currentUser!.uid,
+                          FieldValue.serverTimestamp(),
+                          from,
+                          to,
+                          weight,
+                          description
+                      );
+
+                      FirebaseFirestore.instance.collection('travels').add(
+                        _travel.toMap()
+                      ).then((result) {
+                        final Future<QuerySnapshot<Map<String, dynamic>>> _u = FirebaseFirestore.instance.collection("users")
+                            .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid).get();
+
+                        _u.then((value){
+                          value.docs.first.reference.update({
+                            "travels": FieldValue.arrayUnion([result.id])
                           });
                         });
-                      }
-                    },
-                    child: const Text("Seyahat Oluştur"),
+
+                        CoolAlert.show(
+                          context: context,
+                          type: CoolAlertType.success,
+                          autoCloseDuration: const Duration(seconds: 2),
+                          backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                          title: "Başarıyla seyahat oluşturdunuz!",
+                        ).then((value) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            )
+                          );
+                        });
+                      });
+                    }
+                  },
+                  child: const Text("Seyahat Oluştur"),
                 )
               ],
             ),
