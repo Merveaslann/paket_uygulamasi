@@ -88,8 +88,11 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 - <img width="1068" alt="repo 3 sprint" src="https://user-images.githubusercontent.com/80983951/172018094-e656bfab-4eed-4274-b7df-eaf86d3441ad.png">
 - **Sprint board update**: Sprint board screenshotları;
 <img width="827" alt="asprint" src="https://user-images.githubusercontent.com/80983951/172018193-43f1cd2d-ecca-4dcf-a587-f449b5efb45a.png">
+
 - **Ürün Durumu**: Ekran görüntüleri:
+- 
 - **Sprint Review**:
     - **Alınan Karar**:
+
 - **Sprint Retrospective**:
    
