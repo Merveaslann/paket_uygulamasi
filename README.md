@@ -80,3 +80,16 @@ https://miro.com/app/board/uXjVO3c5b0w=/
     - Görev paylaşımlarını daha detaylı planlama kararı aldık.
 # SPRINT 3
 - **Sprint içinde tamamlanması tahmin edilen puan**: 40 Puan
+- **Puan tamamlama mantığı**: Toplamda proje boyunca tamamlanması gereken 100 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 30 ile başlaması gerektiğine karar verildi.Bu sprint puanı da 40 üzerinden değerlendirilecektir.
+
+- **Backlog düzeni ve Story seçimleri**: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır.Story'ler yapılacak işlere (task'lere) bölünmüştür. 
+
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü WhatsApp ve ya Google Meet üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır: Sprint 3 Daily Scrum Chats:
+- <img width="1068" alt="repo 3 sprint" src="https://user-images.githubusercontent.com/80983951/172018094-e656bfab-4eed-4274-b7df-eaf86d3441ad.png">
+- **Sprint board update**: Sprint board screenshotları;
+<img width="827" alt="asprint" src="https://user-images.githubusercontent.com/80983951/172018193-43f1cd2d-ecca-4dcf-a587-f449b5efb45a.png">
+- **Ürün Durumu**: Ekran görüntüleri:
+- **Sprint Review**:
+    - **Alınan Karar**:
+- **Sprint Retrospective**:
+   
