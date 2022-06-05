@@ -1,9 +1,11 @@
+import 'package:bootcamp_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../models/order.dart';
 import '../widgets/styles.dart';
+import 'home_page.dart';
 
 class OrderAddPage extends StatefulWidget {
   const OrderAddPage({Key? key}) : super(key: key);
@@ -17,8 +19,7 @@ class _OrderAddPageState extends State<OrderAddPage> {
   late String owner;
   late String from;
   late String to;
-  late String size;
-  late double weight;
+  late int weight;
   late String description;
   final _formKey = GlobalKey<FormState>();
   List<String> cities = ['Adana', 'Adıyaman', 'Afyonkarahisar', 'Aksaray', 'Amasya', 'Ankara', 'Antalya', 'Ardahan', 'Artvin', 'Aydın', 'Ağrı', 'Balıkesir', 'Bartın', 'Batman', 'Bayburt', 'Bilecik', 'Bingöl', 'Bitlis', 'Bolu', 'Burdur', 'Bursa', 'Denizli', 'Diyarbakır', 'Düzce', 'Edirne', 'Elâzığ', 'Erzincan', 'Erzurum', 'Eskişehir', 'Gaziantep', 'Giresun', 'Gümüşhane', 'Hakkâri', 'Hatay', 'Isparta', 'Iğdır', 'Kahramanmaraş', 'Karabük', 'Karaman', 'Kars', 'Kastamonu', 'Kayseri', 'Kilis', 'Kocaeli', 'Konya', 'Kütahya', 'Kırklareli', 'Kırıkkale', 'Kırşehir', 'Malatya', 'Manisa', 'Mardin', 'Mersin', 'Muğla', 'Muş', 'Nevşehir', 'Niğde', 'Ordu', 'Osmaniye', 'Rize', 'Sakarya', 'Samsun', 'Siirt', 'Sinop', 'Sivas', 'Tekirdağ', 'Tokat', 'Trabzon', 'Tunceli', 'Uşak', 'Van', 'Yalova', 'Yozgat', 'Zonguldak', 'Çanakkale', 'Çankırı', 'Çorum', 'İstanbul', 'İzmir', 'Şanlıurfa', 'Şırnak'];
@@ -92,13 +93,8 @@ class _OrderAddPageState extends State<OrderAddPage> {
                   },
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Boyut'),
-                  onSaved: (newValue) => size = newValue!,
-                  validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
-                ),
-                TextFormField(
                   decoration: const InputDecoration(labelText: 'Ağırlık'),
-                  onSaved: (newValue) => weight = double.parse(newValue!),
+                  onSaved: (newValue) => weight = int.parse(newValue!),
                   validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
                 ),
                 TextFormField(
@@ -109,21 +105,31 @@ class _OrderAddPageState extends State<OrderAddPage> {
                 ),
                 const SizedBox(height: 15),
                 ElevatedButton(
-                    style: ElevatedButtonStyle(),
+                  style: ElevatedButtonStyle(),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState?.save();
 
-                      FirebaseFirestore.instance.collection('orders').add(Order(
+                      createOrder(Order(
                         title,
                         FirebaseAuth.instance.currentUser!.uid,
+                        FirebaseAuth.instance.currentUser!.email,
                         FieldValue.serverTimestamp(),
                         from,
                         to,
-                        size,
                         weight,
                         description
-                      ).toMap());
+                      )).then((value) {
+                        customSuccessAlert(context, "Başarıyla paket oluşturdunuz!")
+                          .then((value) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              )
+                            );
+                        });
+                      });
                     }
                   },
                   child: const Text("Paket Oluştur"),

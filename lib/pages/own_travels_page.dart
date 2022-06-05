@@ -1,21 +1,22 @@
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
 import '../models/travel.dart';
 import '../widgets/travel_view.dart';
 import '../services/database.dart';
-import 'travel_add_page.dart';
 
-class TravelListings extends StatelessWidget {
-  const TravelListings({Key? key}) : super(key: key);
+class OwnTravelsPage extends StatelessWidget {
+  const OwnTravelsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        StreamBuilder<QuerySnapshot>(
-          stream: getTravels(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Seyahatlerim"),
+      ),
+      body: Container(
+        child: StreamBuilder<QuerySnapshot>(
+          stream: getOwnTravels().asStream(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
               return const Text('Bir hatayla karşılaşıldı');
@@ -23,11 +24,11 @@ class TravelListings extends StatelessWidget {
 
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(
-                child: SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: CircularProgressIndicator()
-                )
+                  child: SizedBox(
+                      height: 25,
+                      width: 25,
+                      child: CircularProgressIndicator()
+                  )
               );
             }
 
@@ -40,19 +41,7 @@ class TravelListings extends StatelessWidget {
             );
           },
         ),
-        Positioned(
-          bottom: 20,
-          right: 20,
-          child: FloatingActionButton(
-            child: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TravelAddPage(),));
-            },
-          )
-        )
-      ]
+      ),
     );
   }
 }
-
-

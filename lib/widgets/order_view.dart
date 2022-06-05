@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // DateTime icin
 
@@ -26,9 +27,15 @@ class _OrderViewState extends State<OrderView> {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.order.title, style: const TextStyle(fontSize: 20)),
+                Flexible(
+                  child: Text(widget.order.title, style: const TextStyle(fontSize: 20))
+                ),
+              ]
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
                 Row(
                   children: [
                     const Icon(Icons.location_on_rounded, size: 20,),
@@ -41,9 +48,9 @@ class _OrderViewState extends State<OrderView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.order.owner),
-                Text(DateFormat("dd/MM/yyyy").format(DateTime.fromMillisecondsSinceEpoch(int.parse(widget.order.date)))),
-                Text(widget.order.size),
+                Text(widget.order.owner_readable == null ? "" : widget.order.owner_readable!),
+                Text(DateFormat("dd/MM/yyyy").format(DateTime.parse((widget.order.date as Timestamp).toDate().toString()))),
+                Text("Kapasite: ${widget.order.weight.toString()} Kg"),
               ],
             )
           ],
