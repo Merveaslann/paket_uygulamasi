@@ -2,43 +2,47 @@ import 'package:bootcamp_app/widgets/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/order.dart';
+import '../services/database.dart';
 import 'order_add_page.dart';
 
 
-class OrderListings extends StatefulWidget {
+class OrderListings extends StatelessWidget {
   const OrderListings({Key? key}) : super(key: key);
 
   @override
-  State<OrderListings> createState() => _OrderListingsState();
-}
-
-class _OrderListingsState extends State<OrderListings> {
-  final Order temp = Order("Halı", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
-  final Order koli = Order("Koli", "Ahmet Sertaç Dinçer", DateTime(2022, 5, 10).millisecondsSinceEpoch.toString(), "İzmir", "İstanbul", "10cm x 10cm", 20.0, "Lorem ipsum");
-
-  @override
   Widget build(BuildContext context) {
-    var orderItems = [
-      OrderView(temp),
-      OrderView(koli),
-      OrderView(temp),
-      OrderView(koli),
-      OrderView(temp),
-      OrderView(koli),
-      OrderView(temp),
-      OrderView(koli),
-      OrderView(temp),
-      OrderView(koli),
-    ];
-
     return Stack(
-      children: [
-        ListView.builder(
-          itemCount: orderItems.length,
-          itemBuilder: (context, index) => orderItems[index],
-        ),
+        fit: StackFit.expand,
+        children: [
+          StreamBuilder<QuerySnapshot>(
+            stream: getOrders(),
+            builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (snapshot.hasError) {
+                return const Text('Bir hatayla karşılaşıldı');
+              }
+
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                    child: SizedBox(
+                        height: 25,
+                        width: 25,
+                        child: CircularProgressIndicator()
+                    )
+                );
+              }
+
+              return ListView(
+                children: snapshot.data!.docs.map((document) {
+                  Order order = Order.fromMap(document.data() as Map<String, dynamic>);
+
+                  return OrderView(order);
+                }).toList(),
+              );
+            },
+          ),
         Positioned(
           bottom: 20,
           right: 20,

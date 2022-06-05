@@ -1,7 +1,9 @@
+import 'package:bootcamp_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart'; // DateTime icin
 
+import '../models/user.dart';
 import '../pages/travel_detail_page.dart';
 import '../models/travel.dart';
 
@@ -37,10 +39,14 @@ class _TravelViewState extends State<TravelView> {
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(widget.travel.title, style: const TextStyle(fontSize: 20)),
-                ],
+                children: [Flexible(
+                  child: Text(
+                    widget.travel.title,
+                    maxLines: 1,
+                    style: const TextStyle(fontSize: 20),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),]
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -53,14 +59,9 @@ class _TravelViewState extends State<TravelView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(widget.travel.owner),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                  Text(widget.travel.owner_readable == null ? "" : widget.travel.owner_readable!),
                   Text(DateFormat("dd/MM/yyyy").format(DateTime.parse((widget.travel.date as Timestamp).toDate().toString()))),
-                  Text("Kapasite: ${widget.travel.weight}"),
+                  Text("Kapasite: ${widget.travel.weight} Kg"),
                 ],
               )
             ],

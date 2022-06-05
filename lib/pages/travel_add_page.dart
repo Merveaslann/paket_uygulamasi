@@ -1,12 +1,11 @@
-import 'package:bootcamp_app/pages/home_page.dart';
-import 'package:bootcamp_app/pages/travels_listings_page.dart';
 import "package:flutter/material.dart";
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cool_alert/cool_alert.dart';
 
 import '../models/travel.dart';
+import '../services/database.dart';
 import '../widgets/styles.dart';
+import '../pages/home_page.dart';
 
 class TravelAddPage extends StatefulWidget {
   const TravelAddPage({Key? key}) : super(key: key);
@@ -117,6 +116,7 @@ class _TravelAddPageState extends State<TravelAddPage> {
                       Travel _travel = Travel(
                           title,
                           FirebaseAuth.instance.currentUser!.uid,
+                          FirebaseAuth.instance.currentUser!.email,
                           FieldValue.serverTimestamp(),
                           from,
                           to,
@@ -124,32 +124,18 @@ class _TravelAddPageState extends State<TravelAddPage> {
                           description
                       );
 
-                      FirebaseFirestore.instance.collection('travels').add(
-                        _travel.toMap()
-                      ).then((result) {
-                        final Future<QuerySnapshot<Map<String, dynamic>>> _u = FirebaseFirestore.instance.collection("users")
-                            .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid).get();
+                      createTravel(_travel).then((result) {
+                        addOrderToUser(result.id);
 
-                        _u.then((value){
-                          value.docs.first.reference.update({
-                            "travels": FieldValue.arrayUnion([result.id])
+                        customSuccessAlert(context, "Başarıyla seyahat oluşturdunuz!")
+                          .then((value) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              )
+                            );
                           });
-                        });
-
-                        CoolAlert.show(
-                          context: context,
-                          type: CoolAlertType.success,
-                          autoCloseDuration: const Duration(seconds: 2),
-                          backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-                          title: "Başarıyla seyahat oluşturdunuz!",
-                        ).then((value) {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
-                            )
-                          );
-                        });
                       });
                     }
                   },
@@ -162,4 +148,6 @@ class _TravelAddPageState extends State<TravelAddPage> {
       ),
     );
   }
+
+
 }

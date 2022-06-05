@@ -1,11 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:checkbox_formfield/checkbox_list_tile_formfield.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../services/database.dart';
 import 'home_page.dart';
 import '../widgets/styles.dart';
-import '../models/user.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -18,6 +17,7 @@ class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
+  late bool check;
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +77,19 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Container(
+              child: CheckboxListTileFormField(
+                title: const Text('Bilgilerimin kayıt edilmesini onaylıyorum.'),
+                onSaved: (bool? value) => check = value!,
+                validator: (bool? value) => value == false || value == null ? 'Onay vermeniz gerekmektedir.' : null,
+                autovalidateMode: AutovalidateMode.always,
+                contentPadding: const EdgeInsets.all(1),
+                initialValue: false,
+              ),
+            )
+          ),
           const SizedBox(height: 15),
           ElevatedButton(
             style: ElevatedButtonStyle(),
@@ -98,13 +111,14 @@ class _SignupPageState extends State<SignupPage> {
     final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password)
       .then((UserCredential usercredential) {
         if (FirebaseAuth.instance.currentUser != null) {
-          FirebaseFirestore.instance.collection("users").add(
-              UserO(FirebaseAuth.instance.currentUser!.uid, "", "", "", FirebaseAuth.instance.currentUser!.email.toString(), FieldValue.serverTimestamp()).toMap()
-          );
+          createUser();
 
-          Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute<void>(builder: (context) => const HomePage()), (route) => false
-          );
+          customSuccessAlert(context, "Başarıyla kayıt oldunuz!")
+            .then((value) {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute<void>(builder: (context) => const HomePage()), (route) => false
+              );
+          });
         }
       }).onError((error, stackTrace) {
         ScaffoldMessenger.of(context).showSnackBar(

@@ -34,7 +34,8 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               const SizedBox(height: 30),
               UserAccountsDrawerHeader(
-                  accountName: const Text("Hoşgeldiniz",
+                  accountName: const Text(
+                    "Hoşgeldiniz",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
