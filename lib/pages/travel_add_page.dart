@@ -42,7 +42,10 @@ class _TravelAddPageState extends State<TravelAddPage> {
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Başlık'),
                   onSaved: (newValue) => title = newValue!,
-                  validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
+                  validator: (value) =>
+                  value == null || value.isEmpty
+                      ? 'Bu alan boş bırakılamaz'
+                      : null,
                 ),
                 DropdownButtonFormField(
                   value: to_dropdown,
@@ -59,10 +62,10 @@ class _TravelAddPageState extends State<TravelAddPage> {
                     });
                   },
                   validator: (value) {
-                    if(value == null){
+                    if (value == null) {
                       return 'Bu alan boş bırakılamaz';
                     }
-                    if(value == "Nereye gideceksiniz?"){
+                    if (value == "Nereye gideceksiniz?") {
                       return 'Lütfen bir şehir seçiniz';
                     }
                     return null;
@@ -83,10 +86,10 @@ class _TravelAddPageState extends State<TravelAddPage> {
                     });
                   },
                   validator: (value) {
-                    if(value == null){
+                    if (value == null) {
                       return 'Bu alan boş bırakılamaz';
                     }
-                    if(value == "Nerden gideceksiniz?"){
+                    if (value == "Nerden gideceksiniz?") {
                       return 'Lütfen bir şehir seçiniz';
                     }
                     return null;
@@ -98,7 +101,10 @@ class _TravelAddPageState extends State<TravelAddPage> {
                     suffixText: 'Kg',
                   ),
                   onSaved: (newValue) => weight = int.parse(newValue!),
-                  validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
+                  validator: (value) =>
+                  value == null || value.isEmpty
+                      ? 'Bu alan boş bırakılamaz'
+                      : null,
                 ),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Açıklama'),
@@ -127,15 +133,16 @@ class _TravelAddPageState extends State<TravelAddPage> {
                       createTravel(_travel).then((result) {
                         addOrderToUser(result.id);
 
-                        customSuccessAlert(context, "Başarıyla seyahat oluşturdunuz!")
-                          .then((value) {
-                            Navigator.pushReplacement(
+                        customSuccessAlert(
+                            context, "Başarıyla seyahat oluşturdunuz!")
+                            .then((value) {
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const HomePage(),
                               )
-                            );
-                          });
+                          );
+                        });
                       });
                     }
                   },
@@ -148,6 +155,4 @@ class _TravelAddPageState extends State<TravelAddPage> {
       ),
     );
   }
-
-
 }

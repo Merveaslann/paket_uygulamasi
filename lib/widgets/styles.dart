@@ -23,7 +23,6 @@ Future<dynamic> customSuccessAlert(BuildContext context, String title) {
   );
 }
 
-
 class CustomButton extends StatelessWidget {
   const CustomButton(
       {Key? key,
@@ -64,14 +63,6 @@ class CustomButton extends StatelessWidget {
     ),
   );
 }
-
-
-
-
-
-
-
-
 
 class CustomButton2Options {
   const CustomButton2Options({

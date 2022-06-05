@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 
 import '../models/travel.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class TravelDetail extends StatefulWidget {
   final Travel travel;

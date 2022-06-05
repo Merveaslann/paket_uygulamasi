@@ -1,9 +1,7 @@
-import 'package:bootcamp_app/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart'; // DateTime icin
 
-import '../models/user.dart';
 import '../pages/travel_detail_page.dart';
 import '../models/travel.dart';
 

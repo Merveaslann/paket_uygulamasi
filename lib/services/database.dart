@@ -56,34 +56,3 @@ Future<Map<String, dynamic>?> getUser(String uid) {
     return value.data();
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Future resetPassword(String email, BuildContext context) async {
-//   try {
-//     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-//   } on FirebaseAuthException catch (e) {
-//     ScaffoldMessenger.of(context).hideCurrentSnackBar();
-//     ScaffoldMessenger.of(context).showSnackBar(
-//       SnackBar(content: Text('Error: ${e.message}')),
-//     );
-//     return null;
-//   }
-//   ScaffoldMessenger.of(context).showSnackBar(
-//     const SnackBar(content: Text('Şifre sıfırlama maili gönderildi.')),
-//   );
-// }
