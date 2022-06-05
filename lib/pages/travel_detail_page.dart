@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart'; // DateTime icin
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/travel.dart';
 
@@ -47,6 +49,12 @@ class _TravelDetailState extends State<TravelDetail> {
                   Text("${widget.travel.from} - ${widget.travel.to}"),
                 ],
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(DateFormat("dd/MM/yyyy").format(DateTime.parse((widget.travel.date as Timestamp).toDate().toString()))),
+                ],
+              ),
               Align(
                 alignment: Alignment.center,
                 child: Container(
@@ -77,7 +85,7 @@ class _TravelDetailState extends State<TravelDetail> {
                         ],
                       ),
                       const Padding(
-                        padding: EdgeInsets.only(left: 30, top: 20),
+                        padding: EdgeInsets.only(left: 30, top: 5),
                           child: Text("Taşınabilecek en fazla ağırlık (kg): ",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
