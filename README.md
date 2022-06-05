@@ -93,8 +93,6 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 <img width="827" alt="asprint" src="https://user-images.githubusercontent.com/80983951/172018193-43f1cd2d-ecca-4dcf-a587-f449b5efb45a.png">
 
 - **Ürün Durumu**: Ekran görüntüleri:
-- <img width="234" alt="ekran1" src="https://user-images.githubusercontent.com/80983951/172049318-35aa2f42-94e7-4f4e-82d4-cc3b88eaa075.png">
-- <img width="236" alt="ekran2" src="https://user-images.githubusercontent.com/80983951/172049323-eadcacb7-e699-48f9-912c-ff33ddd40634.png">
 - ![WhatsApp Image 2022-06-04 at 23 00 37](https://user-images.githubusercontent.com/80983951/172049330-922b4478-33fa-47c2-ba06-489d99c8c5a1.jpeg)
 
 - **Sprint Review**:
