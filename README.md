@@ -98,7 +98,8 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 - ![WhatsApp Image 2022-06-04 at 23 00 37](https://user-images.githubusercontent.com/80983951/172049330-922b4478-33fa-47c2-ba06-489d99c8c5a1.jpeg)
 
 - **Sprint Review**:
-    - **Alınan Karar**:
-
+    - **Alınan Karar**: 3.sprint için planlanan görevleri tamamladık. Bir önceki sprintin alınan karar bölümünde belirtildiği gibi elimizdeki zaman ve şartları göz önüne aldığımızda Uygulama hedefimiz MVP konumundaydı.  Bazı bölümleri statik olmakla beraber dinamik bir uygulamaya yapmaya çalıştık. Eğer süreç daha ciddi bir hal alırsa tasarım ve dinamizm açısından daha da ekleme yapma niyetindeyiz.
 - **Sprint Retrospective**:
-   
+   - Hedefimize yakın ve çalışır bir ürün ortaya çıkarmayı başardık. 
+   - Zaman ve yetkinlik açısından daha avantajlı olsaydık oldukça detaylı bir ürün elde edeceğimiz konusunda hemfikir olduk.
+   - Proje açısından birbirimizin iş yatkınlık ve sorumluluklarını daha iyi tanıyabildik. Başka bir projelerde çalışmak için zemin oluşturduk.
