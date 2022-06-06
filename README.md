@@ -94,8 +94,11 @@ https://miro.com/app/board/uXjVO3c5b0w=/
 
 - **Ürün Durumu**: Ekran görüntüleri:
 - ![WhatsApp Image 2022-06-04 at 23 00 37](https://user-images.githubusercontent.com/80983951/172049330-922b4478-33fa-47c2-ba06-489d99c8c5a1.jpeg)
+- ![WhatsApp Image 2022-06-06 at 20 46 47 (1)](https://user-images.githubusercontent.com/80983951/172221649-7aee0065-648f-45f6-8ddb-a1f23201762b.jpeg)
+- ![WhatsApp Image 2022-06-06 at 20 46 47](https://user-images.githubusercontent.com/80983951/172221756-b8d2aecf-6414-4601-94d5-5ffeb550b58b.jpeg)
+- ![WhatsApp Image 2022-06-06 at 20 46 46](https://user-images.githubusercontent.com/80983951/172221804-3d0a4709-d295-4c1f-93e8-ece641723449.jpeg)
 
-- **Sprint Review**:
+- **Sprint Review**: 
     - **Alınan Karar**: 3.sprint için planlanan görevleri tamamladık. Bir önceki sprintin alınan karar bölümünde belirtildiği gibi elimizdeki zaman ve şartları göz önüne aldığımızda Uygulama hedefimiz MVP konumundaydı.  Bazı bölümleri statik olmakla beraber dinamik bir uygulamaya yapmaya çalıştık. Eğer süreç daha ciddi bir hal alırsa tasarım ve dinamizm açısından daha da ekleme yapma niyetindeyiz.
 - **Sprint Retrospective**:
    - Hedefimize yakın ve çalışır bir ürün ortaya çıkarmayı başardık. 
