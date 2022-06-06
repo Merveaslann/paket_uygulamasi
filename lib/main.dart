@@ -1,3 +1,4 @@
+import 'package:bootcamp_app/pages/open_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,7 +28,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const LoginPage(), // Eğer kullanıcı login ise anasayfaya değilse login sayfasına yönlendiriyor.
+      home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const OpenPage(), // Eğer kullanıcı login ise anasayfaya değilse login sayfasına yönlendiriyor.
     );
   }
 }
