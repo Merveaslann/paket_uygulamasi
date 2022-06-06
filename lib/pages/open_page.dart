@@ -26,6 +26,7 @@ class _OpenPageState extends State<OpenPage> {
         body: Center(
           child: Container(
             child: Stack(
+              alignment: Alignment.center,
                 children: <Widget>[
               StreamBuilder<QuerySnapshot>(
                 stream: getTravels(),
@@ -55,7 +56,6 @@ class _OpenPageState extends State<OpenPage> {
               ),
               Positioned(
                   bottom: 20,
-                  right: 20,
                   child: FloatingActionButton.extended(
                     label: const Text('İlan Vermek İçin Giriş Yapın veya Kaydolun',style: TextStyle(
                       color: Colors.white,

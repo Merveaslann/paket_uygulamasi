@@ -65,7 +65,7 @@ class _TravelDetailState extends State<TravelDetail> {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  height: 200,
+                  height: 225,
                   margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -86,10 +86,17 @@ class _TravelDetailState extends State<TravelDetail> {
                               fontSize: 15,
                             ),
                           ),
-                          const Icon(Icons.star, size: 20,),
-                          const Icon(Icons.star, size: 20,),
-                          const Icon(Icons.star, size: 20,),
-                          const Icon(Icons.star, size: 20,),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(left: 30),
+                          ),
+                          Icon(Icons.star, size: 20,),
+                          Icon(Icons.star, size: 20,),
+                          Icon(Icons.star, size: 20,),
+                          Icon(Icons.star, size: 20,),
                         ],
                       ),
                       const Padding(
