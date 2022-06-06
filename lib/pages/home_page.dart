@@ -1,3 +1,4 @@
+import 'package:bootcamp_app/pages/open_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -88,7 +89,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const LoginPage(),
+          builder: (context) => const OpenPage(),
         )
     );
   }
