@@ -1,6 +1,9 @@
 # Takım İsmi 
 19.Takım
 # Ürün İle İlgili Bilgiler
+- Uygulama için yapılan alternatif afiş: 
+
+  - ![Green Blue Minimal Creative Modern Shop Marketplace Store App Online Poster](https://user-images.githubusercontent.com/80983951/172223346-872aa2bb-3e64-4bac-a76d-ff332b9d7572.jpg)
 # Takım Elemanları
 - Büşra Doğramacı: Product Owner
 - Erbay Gürsel: Scrum Master
