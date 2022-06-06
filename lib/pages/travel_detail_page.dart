@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // DateTime icin
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/travel.dart';
 
@@ -13,6 +14,12 @@ class TravelDetail extends StatefulWidget {
 }
 
 class _TravelDetailState extends State<TravelDetail> {
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,19 +76,20 @@ class _TravelDetailState extends State<TravelDetail> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        children: const [
-                          Padding(padding: EdgeInsets.only(left: 20, top: 60),),
-                          Icon(Icons.account_circle_outlined, size: 50,),
-                          Text(" Mustafa YILMAZ   ",
-                            style: TextStyle(
+                        children: [
+                          const Padding(padding: EdgeInsets.only(left: 20, top: 60),),
+                          const Icon(Icons.account_circle_outlined, size: 50,),
+                          Text(
+                            widget.travel.owner_readable!,
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
                           ),
-                          Icon(Icons.star, size: 20,),
-                          Icon(Icons.star, size: 20,),
-                          Icon(Icons.star, size: 20,),
-                          Icon(Icons.star, size: 20,),
+                          const Icon(Icons.star, size: 20,),
+                          const Icon(Icons.star, size: 20,),
+                          const Icon(Icons.star, size: 20,),
+                          const Icon(Icons.star, size: 20,),
                         ],
                       ),
                       const Padding(
@@ -130,7 +138,16 @@ class _TravelDetailState extends State<TravelDetail> {
                   Icons.email_outlined,
                   size: 24.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  launchUrl(Uri(
+                      scheme: "mailto",
+                      path: widget.travel.owner_readable,
+                      query: encodeQueryParameters(<String, String>{
+                        'subject': 'Paket Uygulaması Seyahati Hakkında',
+                        'body': 'Merhaba,\nPaket uygulaması üzerinden oluşturduğunuz ${widget.travel.from} - ${widget.travel.to} yolculuğunuz için götürülmesi gereken bir paketim var. Kabul ederseniz mail adresim üzerinden iletişime geçebilirsiniz.\nTaşınacak paket özellikleri:\n->\n->\n->'
+                      }),
+                  ));
+                },
               ),
             ],
           ),

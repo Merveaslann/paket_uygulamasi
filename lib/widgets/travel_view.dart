@@ -58,6 +58,11 @@ class _TravelViewState extends State<TravelView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(widget.travel.owner_readable == null ? "" : widget.travel.owner_readable!),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   Text(DateFormat("dd/MM/yyyy").format(DateTime.parse((widget.travel.date as Timestamp).toDate().toString()))),
                   Text("Kapasite: ${widget.travel.weight} Kg"),
                 ],

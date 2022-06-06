@@ -93,7 +93,7 @@ class _OrderAddPageState extends State<OrderAddPage> {
                   },
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Ağırlık'),
+                  decoration: const InputDecoration(labelText: 'Ağırlık', suffixText: "Kg"),
                   onSaved: (newValue) => weight = int.parse(newValue!),
                   validator: (value) => value == null || value.isEmpty ? 'Bu alan boş bırakılamaz' : null,
                 ),
